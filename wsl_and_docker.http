@@ -1,0 +1,6 @@
+@wsl_and_docker_HostAddress = http://localhost:5049
+
+GET {{wsl_and_docker_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
