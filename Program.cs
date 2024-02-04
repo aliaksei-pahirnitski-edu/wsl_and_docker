@@ -1,4 +1,6 @@
 using wsl_and_docker.Env;
+using wsl_and_docker.Files;
+using wsl_and_docker.MemCpu;
 using wsl_and_docker.Weather;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +27,9 @@ app.MapGet("/weatherforecast", WeatherEndpoint.GetForecast)
 
 app.MapGet("/os", EnvEndpoints.OSName);
 app.MapGet("/env", EnvEndpoints.GetEnv);
+app.MapGet("/exists", FilesEndpoint.Exists);
+
+app.MapGet("/cpu", CpuEndpoint.DoCalc);
 
 
 app.Run();
