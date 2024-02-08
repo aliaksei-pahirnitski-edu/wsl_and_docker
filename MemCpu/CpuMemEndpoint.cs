@@ -1,10 +1,18 @@
 ﻿using System.Diagnostics;
+using wsl_and_docker.DI;
 
 namespace wsl_and_docker.MemCpu
 {
-    public static class CpuEndpoint
+    public class CpuMemEndpoint
     {
-        public static string DoCalc(int? n)
+        private readonly ISampleService _sampleService;
+
+        public CpuMemEndpoint(ISampleService sampleService)
+        {
+            _sampleService = sampleService;
+        }
+
+        public string DoCalc(int? n)
         {
             var sw = Stopwatch.StartNew();
             var result = n is null ? CalculateValue() : CalculateValue(n.Value);
