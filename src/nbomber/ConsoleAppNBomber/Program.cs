@@ -1,6 +1,7 @@
 ﻿using NBomber.CSharp;
 
-// See https://aka.ms/new-console-template for more information
+// https://nbomber.com/
+// https://github.com/PragmaticFlow/NBomber
 Console.WriteLine("Hello, World!");
 
 using var httpClient = new HttpClient();
@@ -18,10 +19,25 @@ var scenarioOs = Scenario.Create("get_os_name", async context =>
         .WithLoadSimulations(
             Simulation.RampingInject(rate: 5,
                                 interval: TimeSpan.FromSeconds(1),
-                                during: TimeSpan.FromSeconds(30))
+                                during: TimeSpan.FromSeconds(40))
         );
 
 
+
+var scenarioMem = Scenario.Create("eating Memory", async context =>
+{
+    var response = await httpClient.GetAsync("/mem");
+
+    await Task.Delay(500);
+
+    return response.IsSuccessStatusCode
+        ? Response.Ok()
+        : Response.Fail();
+})
+            .WithoutWarmUp()
+            .WithLoadSimulations(
+                Simulation.KeepConstant(copies:1, during: TimeSpan.FromSeconds(20))
+            );
 
 var scenarioCpu = Scenario.Create("eating CPU", async context =>
 {
@@ -33,7 +49,7 @@ var scenarioCpu = Scenario.Create("eating CPU", async context =>
 })
             .WithoutWarmUp()
             .WithLoadSimulations(
-                Simulation.Inject(rate: 2,
+                Simulation.Inject(rate: 3,
                                   interval: TimeSpan.FromSeconds(1),
                                   during: TimeSpan.FromSeconds(30))
             );
@@ -55,7 +71,7 @@ var scenarioWeather = Scenario.Create("get_weatherforecast", async context =>
 */
 
 NBomberRunner
-    .RegisterScenarios(scenarioOs, scenarioCpu)
+    .RegisterScenarios(scenarioOs, scenarioCpu, scenarioMem)
     .Run();
 
 Console.WriteLine("Press any key ...");
