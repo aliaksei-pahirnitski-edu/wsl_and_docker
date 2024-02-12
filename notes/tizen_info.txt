@@ -1,0 +1,41 @@
+Tizen
+tizen.org
+
+https://developer.tizen.org/dev-guide/training/native-app/ru/wearable/lesson_1/index.html
+
+1 января 2012 года
+Прежние названия	LiMo Foundation
+Samsung 
+Tizen (произносится «та́йзен») — открытая операционная система 
+на базе ядра Linux, 
+предназначенная для широкого круга устройств, включая 
+смартфоны, интернет-планшеты, носимые устройства, такие как умные часы и фитнес-браслеты, компьютеры, автомобильные информационно-развлекательные системы, «умные» телевизоры и цифровые камеры, разрабатываемая и управляемая такими корпорациями, как Intel и Samsung
+
+Samsung Tizen vs Android TV
+
+https://ru.wikipedia.org/wiki/Tizen
+шрифтом Pluto Bold 
+символом Tizen является Tizen Pinwheel (вертушка)
+Tizen Wearable
+
+2017 году коррупционный скандал
+
+Версия 4.0:
+Tizen 4.0 M1 была опубликована[8] 6 июня 2017 года. В этой версии добавлена поддержка языка C#, Xamarin
+Tizen 7.0: 31 мая 2022
+Tizen 7.0 Public M1: 31 мая 2022
+Tizen 7.0 Public M2: 31 октября 2022
+Tizen 8.0: 31 мая 2023
+Tizen 8.0 Public M1: 31 мая 2023
+
+Tizen Store
+разработчикам уже доступен личный кабинет: регистрация и последующая публикация приложений в котором бесплатны
+С 2022 года вместо магазина приложений Tizen Store, работает магазин приложений Galaxy Store.
+ 
+Tizen SDK 
+Он позволяет создавать веб-, нативные и гибридные приложения с помощью Tizen API
+
+Glossary
+Cynara:  A component of the application security enforcement mechanism. Cynara maintains the relationships between applications and application privileges
+IVI: In-Vehicle Infotainment
+OBS: Open Build Service

@@ -1,0 +1,93 @@
+Created folders in Windows:
+C:\WslEdu
+D:\Education\WslTests
+C:\Users\aliaksei.pahirnitski\AlexWslTests
+
+!!
+\\wsl$
+\\wsl$\Ubuntu
+\\wsl.localhost\rancher-desktop
+\\wsl.localhost\rancher-desktop-data
+
+---------------------
+1. whoami
+root
+
+2. cd AlexWslTests
+
+3. ls
+
+4. clear
+
+5. /mnt/c/WslEdu # cd /mnt/d/Education
+/mnt/d/Education # touch touchedInWSL.txt
+/mnt/d/Education # ls
+1-tmp             4-Tutorials       6-Books           WslTests          touchedInWSL.txt
+2-projects        5-open-source     7-articles_good   kube1
+
+6. sudo <command>
+
+7. rootalex@LAPTOP-A1FDEMNE:/mnt/c/WslEdu$ hostnamectl
+ Static hostname: LAPTOP-A1FDEMNE
+       Icon name: computer-container
+         Chassis: container
+      Machine ID: 4de0956953c14040b5656bd1470f9c10
+         Boot ID: ced9fd1bb55a409cb96089f9e0cacdf3
+  Virtualization: wsl
+Operating System: Ubuntu 22.04.3 LTS
+          Kernel: Linux 5.15.133.1-microsoft-standard-WSL2
+    Architecture: x86-64
+
+8. mnt/c/Users/aliaksei.pahirnitski # cat --help
+BusyBox v1.36.1 (2023-10-09 08:04:29 UTC) multi-call binary.
+
+Usage: cat [-nbvteA] [FILE]...
+Print FILEs to stdout
+
+9. snap --help
+   apt --help
+   apt-get --help
+
+10. rootalex@LAPTOP-A1FDEMNE:/mnt/c/WslEdu$ chmod +x ./dotnet-install.sh
+rootalex@LAPTOP-A1FDEMNE:/mnt/c/WslEdu$ chmod --help
+Usage: chmod [OPTION]... MODE[,MODE]... FILE...
+  or:  chmod [OPTION]... OCTAL-MODE FILE...
+  or:  chmod [OPTION]... --reference=RFILE FILE...
+Change the mode of each FILE to MODE.
+With --reference, change the mode of each FILE to that of RFILE.
+
+
+11. rootalex@LAPTOP-A1FDEMNE:~/alexnet$ help --help
+help: help [-dms] [pattern ...]
+    Display information about builtin commands.
+	
+12. which bash
+/usr/bin/bash
+
+Example .sh
+#! /usr/bin/bash
+echo "Hallo"
+echo "today is $(date)"
+echo "user $(whoami)"
+
+13. rootalex@LAPTOP-A1FDEMNE:~/alexnet$ echo "today is $(date)"
+today is Fri Jan 12 16:42:56 +03 2024
+
+
+14. ip route show | grep -i default | awk '{ print $3}'	
+rootalex@LAPTOP-A1FDEMNE:/usr/bin$ ip route show | grep -i default | awk '{ print $3}'
+172.19.112.1
+For example, you may need to bind your application to 0.0.0.0 instead of 127.0.0.   
+   
+15. Write output to new file (>>)
+rootalex@LAPTOP-A1FDEMNE:~/alexfolder$ ls >> tmp.txt
+rootalex@LAPTOP-A1FDEMNE:~/alexfolder$ ls -a
+.  ..  file1.txt  tmp.txt
+rootalex@LAPTOP-A1FDEMNE:~/alexfolder$ nano tmp.txt
+rootalex@LAPTOP-A1FDEMNE:~/alexfolder$ cat tmp.txt
+file1.txt
+tmp.txt
+rootalex@LAPTOP-A1FDEMNE:~/alexfolder$
+   
+16. ls | nano -
+

@@ -1,0 +1,70 @@
+Best
+------------------
+0. https://learn.microsoft.com/ru-ru/training/modules/wsl-introduction/
+
+1. https://ss64.com/bash/
+
+2. https://learn.microsoft.com/ru-ru/windows/wsl/basic-commands
+
+3. https://metanit.com/sharp/tutorial/1.7.php
+------------------
+
+Unsorted
+----------------------
+
+READ
+---------------------
+15 сен 2023: Windows + WSL. Счастье виндузятника
+https://habr.com/ru/articles/761256/
+
+
+
+
+
+
+https://learn.microsoft.com/ru-ru/training/modules/wsl-introduction/
+https://learn.microsoft.com/ru-ru/windows/wsl/basic-commands
+
+
+(long)
+https://devhops.ru/windows/wsl/
+
+
+Install dotnet on WSL?
+https://learn.microsoft.com/en-us/dotnet/core/install/linux
+https://learn.microsoft.com/en-us/dotnet/core/install/how-to-detect-installed-versions?pivots=os-linux
+
+/mnt/c/Users/aliaksei.pahirnitski # wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+
+
+Первое приложение в WSL
+https://metanit.com/sharp/tutorial/1.7.php
+
+
+
+OS version?
+lsb_release -a
+cat etc/os-release
+
+
+https://help.ubuntu.com/
+
+/////////////////
+http://onreader.mdl.ru/ProWindowsSubsystemLinux/content/Ch01.html
+http://onreader.mdl.ru/ProWindowsSubsystemLinux/content/Ch02.html
+
+https://habr.com/ru/articles/481746/
+
+https://ilyachalov.livejournal.com/331183.html
+https://devhops.ru/windows/wsl/
+
+///////////////////////////
+https://helpdeskgeek.com/how-to/how-to-check-the-windows-subsystem-for-linux-wsl-version-in-windows/
+https://helpdeskgeek.com/windows-11/how-to-install-and-use-bash-on-windows-11/
+
+https://superuser.com/questions/1551146/how-to-verify-that-wsl-2-is-used
+https://learn.microsoft.com/ru-ru/windows/wsl/basic-commands
+
+
+
+

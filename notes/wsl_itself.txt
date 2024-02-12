@@ -1,0 +1,56 @@
+https://learn.microsoft.com/ru-ru/windows/wsl/basic-commands
+
+1. wsl --help
+
+2. wsl -e ls
+wsl -exec ls
+
+3. wsl --cd [path]
+
+4. wsl --list --verbose
+   wsl --list --online
+
+C:\Users\aliaksei.pahirnitski>wsl --list --verbose
+  NAME                    STATE           VERSION
+* rancher-desktop         Running         2
+  rancher-desktop-data    Stopped         2
+
+
+5. wsl -d <distro> -u <usr>
+wsl -d Ubuntu
+
+6. C:\Users\aliaksei.pahirnitski>wsl --status
+Default Distribution: rancher-desktop
+Default Version: 2
+
+Windows Subsystem for Linux was last updated on 12/26/2022
+WSL automatic updates are on.
+Kernel version: 5.10.102.1
+
+7. wsl --update
+
+8. wsl --install -d Ubuntu
+Windows Subsystem for Linux has been installed.
+
+C:\Users\aliaksei.pahirnitski>wsl --install -d Ubuntu
+Installing: Ubuntu
+Ubuntu has been installed.
+Launching Ubuntu...
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: rootAlex
+adduser: Please enter a username matching the regular expression configured
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'
+option to relax this check or reconfigure NAME_REGEX.
+Enter new UNIX username: rootalex
+
+
+9. wsl hostname -I
+172.19.116.235
+
+10. call bash script located in win example
+wsl.exe -- "/mnt/c/program files/microsoft visual studio/2022/community/common7/ide/extensions/vuhcxrcn.r1e/Scripts/InstallDotNet.sh" aspnetcore 8.0
+
+
+

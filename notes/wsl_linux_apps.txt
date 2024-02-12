@@ -1,0 +1,25 @@
+Linux apps
+https://helpdeskgeek.com/linux-tips/the-20-best-linux-apps-ever/
+Best Photo Editing App: GIMP
+Best Digital Art App: Inkscape
+Best Office Suite: LibreOffice
+Best Desktop Publishing App: Scribus
+Best Email Client: Thunderbird
+Best Media Player: VLC
+
+
+
+vim
+cat 
+touch
+cd
+mkdir
+ls
+ll
+
+
+GUI
+xclock
+
+systemd ??
+https://habr.com/ru/companies/slurm/articles/255845/
