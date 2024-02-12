@@ -36,7 +36,8 @@ app.MapGet("/exists", FilesEndpoint.Exists);
 app.MapGet("/createDir", FilesEndpoint.CreateDir);
 app.MapPost("/log", FilesEndpoint.AppendLog);
 
-// app.MapGet("/cpu", (int? n, [FromServices]CpuMemEndpoint service) => service.DoCalc(n));
+app.MapGet("/cpu", (int? n, [FromServices] CpuMemEndpoint service) => service.DoCalc(n));
+app.MapGet("/mem", (int? n, [FromServices] CpuMemEndpoint service) => service.EatMemory(n));
 
 
 app.Run();

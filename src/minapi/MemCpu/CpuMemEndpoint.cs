@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System.Collections;
+using System.Diagnostics;
+using System.IO;
 using wsl_and_docker.DI;
 
 namespace wsl_and_docker.MemCpu
@@ -14,10 +16,35 @@ namespace wsl_and_docker.MemCpu
 
         public string DoCalc(int? n)
         {
+            Console.WriteLine($"[{DateTime.Now:hh:mm:ss}] {nameof(DoCalc)} n=[{n}]");
+
             var sw = Stopwatch.StartNew();
+            _sampleService.DoSomething();
             var result = n is null ? CalculateValue() : CalculateValue(n.Value);
             sw.Stop();
-            var msg = $"Took {sw.ElapsedMilliseconds}ms (in microsecond: {sw.Elapsed.TotalMicroseconds}). Value=[{result:f3}]";
+            var msg = $"Calc Took {sw.ElapsedMilliseconds}ms (in microsecond: {sw.Elapsed.TotalMicroseconds}). Value=[{result:f3}]";
+            return msg;
+        }
+
+        public async Task<string> EatMemory(int? n)
+        {
+            int N = n ?? 10_000_000;
+            Console.WriteLine($"[{DateTime.Now:hh:mm:ss}] {nameof(DoCalc)} N=[{N}]");
+            var before = Process.GetCurrentProcess().WorkingSet64;
+
+            var sw = Stopwatch.StartNew();
+            IList memory = new ArrayList();            
+
+            for (int i = 0; i < 10; i++)
+            {
+                var data = new List<string>(capacity:N);
+                memory.Add(data);
+                await Task.Delay(100);
+            }
+
+            var after = Process.GetCurrentProcess().WorkingSet64;
+            sw.Stop();
+            var msg = $"Memory Took {sw.ElapsedMilliseconds}ms. WorkingSet64=[{before} -> {after}]";
             return msg;
         }
 
