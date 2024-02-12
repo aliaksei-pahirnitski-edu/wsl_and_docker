@@ -20,7 +20,7 @@ namespace wsl_and_docker.Files
     {
         public static FileOrDirExistance Exists(string path)
         {
-            Console.WriteLine($"[{DateTime.Now:hh:mm:ss}] {nameof(Exists)} [{path}]");
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] {nameof(Exists)} [{path}]");
             if (File.Exists(path))
             {
                 return new FileOrDirExistance(true, false, new FileInfo(path).FullName, true);
@@ -35,13 +35,14 @@ namespace wsl_and_docker.Files
             // neiter file nor dir not exists
             bool isDirectory = Path.EndsInDirectorySeparator(path);
             char[] invalidChars = Path.GetInvalidFileNameChars();
-            bool isValid = !invalidChars.Intersect(path).Any();
+            // bool isValid = path.Split(Path.PathSeparator).All(chunk => !invalidChars.Intersect(chunk).Any());
+            bool isValid = path.Split(Path.PathSeparator).All(chunk => chunk.IndexOfAny(invalidChars) < 0);
             return new FileOrDirExistance(false, isDirectory && isValid, Path.GetFullPath(path), isValid);
         }
 
         public static CreatedDirectoryResult CreateDir(string path)
         {
-            Console.WriteLine($"[{DateTime.Now:hh:mm:ss}] {nameof(CreateDir)} [{path}]");
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] {nameof(CreateDir)} [{path}]");
             bool existed = Directory.Exists(path);
             if (!existed)
             {
@@ -62,7 +63,7 @@ namespace wsl_and_docker.Files
 
         public static async Task<AppendLogResult> AppendLog(/*[FromBody]*/AppendLogRequest request)
         {
-            Console.WriteLine($"[{DateTime.Now:hh:mm:ss}] {nameof(AppendLog)} [{request}]");
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] {nameof(AppendLog)} [{request}]");
             try
             {
                 var fullPath = Path.GetFullPath(request.File);
@@ -73,7 +74,7 @@ namespace wsl_and_docker.Files
                     dirInfo.Create();
                 }
                 using var writer = new StreamWriter(fullPath, append: true);
-                await writer.WriteLineAsync($"[{DateTime.Now: hh:mm:ss}]: {request.Message}");
+                await writer.WriteLineAsync($"[{DateTime.Now:HH:mm:ss}]: {request.Message}");
                 return AppendLogResult.Ok(fullPath);
             }
             catch (Exception exc)

@@ -31,6 +31,7 @@ app.MapGet("/weatherforecast", WeatherEndpoint.GetForecast)
 
 app.MapGet("/os", EnvEndpoints.OSName);
 app.MapGet("/env", EnvEndpoints.GetEnv);
+app.MapGet("/exc", EnvEndpoints.Exception);
 
 app.MapGet("/exists", FilesEndpoint.Exists);
 app.MapGet("/createDir", FilesEndpoint.CreateDir);

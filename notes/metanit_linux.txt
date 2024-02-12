@@ -1,0 +1,23 @@
+www.brendangregg.com
+https://www.brendangregg.com/linuxperf.html
+https://www.brendangregg.com/Perf/linux_observability_tools.png
+
+1) strace --help
+man strace
+
+2) ltrace
+not installled
+opensnoop
+
+3) lsof, 
+fatrace, filelife, pcstat
+
+4) ss
+ss - another utility to investigate sockets
+
+nstat
+nstat, rtacct - network statistics tools
+
+5) perf, 
+
+6) top, ps, vmstat

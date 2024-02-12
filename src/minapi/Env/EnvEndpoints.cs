@@ -1,4 +1,5 @@
 ﻿
+
 namespace wsl_and_docker.Env
 {
     public static class EnvEndpoints
@@ -8,6 +9,13 @@ namespace wsl_and_docker.Env
             var osName = Environment.OSVersion.ToString();
             Console.WriteLine($"OSName=[{osName}]:");
             return osName;
+        }
+
+        // intentianoly produce exception
+        internal static string Exception(HttpContext context)
+        {
+            string x = null!;
+            return $"Will be exception here: {x.Length}";
         }
 
         internal static string? GetEnv(string envName)
