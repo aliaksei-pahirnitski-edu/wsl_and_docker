@@ -33,6 +33,7 @@
       "launchBrowser": true,
       "launchUrl": "https://localhost:7236/swagger",
       "environmentVariables": {
+        "ALEX_SETTING": "My Env Value",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_URLS": "https://localhost:7236;http://localhost:5049"
       },
