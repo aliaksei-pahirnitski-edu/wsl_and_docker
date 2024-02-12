@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "ConsoleAppWsl": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ALEXENV": "MY_FROM_VS"
+      }
+    },
+    "WSL": {
+        "commandName": "WSL2",
+        "distributionName": "",
+        "environmentVariables": {
+            "ALEXENV": "MY_FROM_VS_UBUNTU"
+        }
+    }
+  }
+}
