@@ -17,7 +17,7 @@ builder.Services.AddScoped<CpuMemEndpoint>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -31,6 +31,7 @@ app.MapGet("/weatherforecast", WeatherEndpoint.GetForecast)
 
 app.MapGet("/os", EnvEndpoints.OSName);
 app.MapGet("/env", EnvEndpoints.GetEnv);
+app.MapGet("/args", EnvEndpoints.GetArgs);
 app.MapGet("/exc", EnvEndpoints.Exception);
 
 app.MapGet("/exists", FilesEndpoint.Exists);

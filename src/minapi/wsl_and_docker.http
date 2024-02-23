@@ -1,11 +1,14 @@
-### @wsl_and_docker_HostAddress = http://localhost:5049
-@wsl_and_docker_HostAddress = http://localhost:8080
+@wsl_and_docker_HostAddress = http://localhost:5049
+### @wsl_and_docker_HostAddress = http://localhost:8080
 
 GET {{wsl_and_docker_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
 GET {{wsl_and_docker_HostAddress}}/os/
+
+###
+GET {{wsl_and_docker_HostAddress}}/args
 
 ###
 GET {{wsl_and_docker_HostAddress}}/env?envName=ALEX_ENV
