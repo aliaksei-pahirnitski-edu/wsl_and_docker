@@ -8,6 +8,13 @@ namespace wsl_and_docker.Env
 {
     public static class EnvEndpoints
     {
+        public static string CurrentTime()
+        {
+            var localNow = DateTime.Now.ToString();
+            Console.WriteLine($"Current _HotReload_ Time=[{localNow}]");
+            return $"Current Time=[{localNow}]";
+        }
+
         public static string OSName()
         {
             var osName = Environment.OSVersion.ToString();

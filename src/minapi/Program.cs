@@ -30,6 +30,7 @@ app.MapGet("/weatherforecast", WeatherEndpoint.GetForecast)
 .WithOpenApi();
 
 app.MapGet("/os", EnvEndpoints.OSName);
+app.MapGet("/time", EnvEndpoints.CurrentTime);
 app.MapGet("/env", EnvEndpoints.GetEnv);
 app.MapGet("/args", EnvEndpoints.GetArgs);
 app.MapGet("/exc", EnvEndpoints.Exception);
@@ -40,7 +41,6 @@ app.MapPost("/log", FilesEndpoint.AppendLog);
 
 app.MapGet("/cpu", (int? n, [FromServices] CpuMemEndpoint service) => service.DoCalc(n));
 app.MapGet("/mem", (int? n, [FromServices] CpuMemEndpoint service) => service.EatMemory(n));
-
 
 app.Run();
 

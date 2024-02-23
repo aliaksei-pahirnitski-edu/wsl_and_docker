@@ -40,7 +40,7 @@
         "DOCKER_ENV": "Alex Value in Docker"
       },
       "publishAllPorts": true,
-      "DockerfileRunArguments": "docker_run_arg1 docker_run_arg2"
+      "DockerfileRunArguments": "-v my-vs-volume:/alex4"
     },
     "WSL": {
       "commandName": "WSL2",
